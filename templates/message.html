@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}HireConnect{% endblock %}
+{% block content %}
+<div style="display:flex; justify-content:center; align-items:center; height:60vh;">
+    <div style="background:white; padding:40px 50px; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.15); text-align:center;">
+        <p style="font-size:18px; color:#2c3e50; margin-bottom:20px;">{{ message }}</p>
+        <a href="{{ link_url }}" class="btn">{{ link_text }}</a>
+    </div>
+</div>
+{% endblock %}

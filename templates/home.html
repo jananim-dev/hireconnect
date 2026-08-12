@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}HireConnect - Find Your Next Job{% endblock %}
+{% block content %}
+<style>
+    .hero { background: linear-gradient(135deg, #2c3e50, #4a6b8a); color: white; padding: 40px; text-align: center; }
+    .hero h1 { font-size: 30px; margin-bottom: 8px; }
+    .hero p { font-size: 15px; color: #dce4ec; margin-bottom: 20px; }
+    .search-bar { display: flex; justify-content: center; gap: 10px; }
+    .search-bar input { padding: 10px 14px; border-radius: 6px; border: none; font-size: 14px; width: 220px; }
+    .search-bar button { padding: 10px 20px; background: #4CAF50; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; }
+    .section-title { font-size: 22px; color: #2c3e50; margin-bottom: 15px; }
+</style>
+
+<div class="hero">
+    <h1>Find Your Next Opportunity</h1>
+    <p>Connecting job seekers with recruiters across Tamil Nadu</p>
+    <form class="search-bar" method="GET" action="/">
+        <input type="text" name="q" placeholder="Search by title or company" value="{{ request.args.get('q', '') }}">
+        <input type="text" name="location" placeholder="Location" value="{{ request.args.get('location', '') }}">
+        <button type="submit">Search</button>
+    </form>
+</div>
+
+<div class="container">
+    <div class="section-title">Available Jobs ({{ jobs|length }})</div>
+    <table>
+        <tr>
+            <th>Title</th>
+            <th>Company</th>
+            <th>Location</th>
+            <th>Salary</th>
+            <th>Description</th>
+            <th>Action</th>
+        </tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.title }}</td>
+            <td>{{ job.company_name }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.salary_range }}</td>
+            <td>{{ job.description }}</td>
+            <td>
+                {% if session.get('role') == 'jobseeker' %}
+                    <a class="btn" href="/apply/{{ job.id }}">Apply</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

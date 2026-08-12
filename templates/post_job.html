@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Post a Job - HireConnect{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 500px; margin: 40px auto;">
+    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c3e50; margin-bottom: 20px;">Post a Job</h2>
+        <form method="POST">
+            <input type="text" name="title" placeholder="Job Title" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+            <textarea name="description" placeholder="Description" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;"></textarea>
+            <input type="text" name="company_name" placeholder="Company Name" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+            <input type="text" name="location" placeholder="Location" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+            <input type="text" name="salary_range" placeholder="Salary Range (e.g. 4LPA - 6LPA)" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px;">
+            <button type="submit" class="btn" style="width:100%; padding:10px; margin-top:10px;">Post Job</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

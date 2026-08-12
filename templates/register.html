@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Register - HireConnect{% endblock %}
+{% block content %}
+<div style="display:flex; justify-content:center; align-items:center; height:70vh;">
+    <div style="background:white; padding:30px 40px; border-radius:8px; box-shadow:0 1px 6px rgba(0,0,0,0.15); width:320px;">
+        <h2 style="color:#2c3e50; text-align:center; margin-bottom:15px;">Create Account</h2>
+        <form method="POST">
+            <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <input type="email" name="email" placeholder="Email" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <input type="password" name="password" placeholder="Password" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <select name="role" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+                <option value="jobseeker">Job Seeker</option>
+                <option value="recruiter">Recruiter</option>
+            </select>
+            <button type="submit" class="btn" style="width:100%; padding:10px; margin-top:10px;">Register</button>
+        </form>
+        <p style="text-align:center; margin-top:15px;">Already have an account? <a href="/login" style="color:#2c3e50;">Login</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+recruiter_id,title,description,company_name,location,salary_range,created_at
+1,Python Flask Developer,Build and maintain REST APIs using Flask and MySQL,Zoho Corporation,Chennai,5LPA - 7LPA,2026-08-11 15:00:00
+2,Full Stack Developer,Develop end to end web apps using Node.js React and MySQL,Freshworks,Chennai,6LPA - 9LPA,2026-08-11 15:01:00
+1,Backend Developer,Design scalable backend services using Node.js and Express,TCS,Chennai,4LPA - 6LPA,2026-08-11 15:02:00
+3,Junior Web Developer,Work on HTML CSS JS based websites for clients,Local IT Solutions,Cuddalore,2LPA - 3LPA,2026-08-11 15:03:00
+2,MERN Stack Developer,Build web apps using MongoDB Express React and Node,Infosys,Chennai,5LPA - 8LPA,2026-08-11 15:04:00
+4,Python Developer,Write clean Python code for internal automation tools,Wipro,Pondicherry,3LPA - 5LPA,2026-08-11 15:05:00
+1,Flask API Developer,Create and document REST APIs for mobile app backend,ABC Technologies,Chennai,4LPA - 6LPA,2026-08-11 15:06:00
+5,React Developer,Build responsive UI components using React and Tailwind,HCL Technologies,Chennai,4LPA - 7LPA,2026-08-11 15:07:00
+3,Web Developer Intern,Assist in building and testing company website features,StartupHub,Pondicherry,1LPA - 2LPA,2026-08-11 15:08:00
+2,Node.js Developer,Develop microservices using Node.js and MySQL,Accenture,Chennai,5LPA - 8LPA,2026-08-11 15:09:00
+4,Software Developer,Full stack development using Python Flask and React,Cognizant,Chennai,5LPA - 7LPA,2026-08-11 15:10:00
+1,Database Developer,Design and optimize MySQL schemas and queries,ABC technologies,Chennai,4LPA - 6LPA,2026-08-11 15:11:00
+5,Remote Web Developer,Build and maintain client websites remotely,Freelance Solutions,Remote,3LPA - 5LPA,2026-08-11 15:12:00
+3,Junior Python Developer,Support backend team with Flask based projects,Cuddalore Softworks,Cuddalore,2LPA - 4LPA,2026-08-11 15:13:00
+2,Full Stack Engineer,Own features across frontend and backend stack,Tech Mahindra,Chennai,6LPA - 10LPA,2026-08-11 15:14:00
+4,Frontend Developer,Build pixel perfect UI using HTML CSS and JavaScript,Zoho Corporation,Chennai,4LPA - 6LPA,2026-08-11 15:15:00
+1,API Integration Developer,Integrate third party APIs into existing Flask apps,ABC Technology,Chennai,4LPA - 6LPA,2026-08-11 15:16:00
+5,Trainee Web Developer,Learn and contribute to live web projects under guidance,Pondicherry Web Labs,Pondicherry,1.5LPA - 2.5LPA,2026-08-11 15:17:00
+3,Full Stack Developer Fresher,Opportunity for freshers strong in JS Node and MySQL,Cuddalore Tech Park,Cuddalore,3LPA - 4LPA,2026-08-11 15:18:00
+2,Python Flask Intern,Assist in developing and testing Flask based web app,Freshworks,Chennai,1LPA - 1.5LPA,2026-08-11 15:19:00

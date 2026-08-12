@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}My Posted Jobs - HireConnect{% endblock %}
+{% block content %}
+<div class="container">
+    <div style="margin-bottom: 15px;"><a href="/post-job" class="btn">+ Post New Job</a></div>
+    <h1 style="color:#2c3e50; margin-bottom:15px;">My Posted Jobs</h1>
+    <table>
+        <tr><th>Title</th><th>Location</th><th>Salary</th><th>Applicants</th><th>Actions</th></tr>
+        {% for job in jobs %}
+        <tr>
+            <td>{{ job.title }}</td>
+            <td>{{ job.location }}</td>
+            <td>{{ job.salary_range }}</td>
+            <td><a href="/job/{{ job.id }}/applicants">{{ job.applicant_count }} applicants</a></td>
+            <td>
+                <a href="/edit-job/{{ job.id }}" style="color:#2c3e50;">Edit</a> |
+                <a href="/delete-job/{{ job.id }}" style="color:#e53935;" onclick="return confirm('Delete this job?')">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

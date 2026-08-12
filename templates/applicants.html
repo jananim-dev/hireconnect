@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Applicants - HireConnect{% endblock %}
+{% block content %}
+<div class="container">
+    <div style="margin-bottom: 15px;"><a href="/my-jobs">&larr; Back to My Jobs</a></div>
+    <h1 style="color:#2c3e50; margin-bottom:15px;">Applicants for {{ job.title }}</h1>
+    <table>
+        <tr><th>Name</th><th>Email</th><th>Skills</th><th>Education</th><th>Experience</th><th>Resume</th><th>Status</th><th>Applied At</th><th>Update</th></tr>
+        {% for a in applicants %}
+        <tr>
+            <td>{{ a.name }}</td>
+            <td>{{ a.email }}</td>
+            <td>{{ a.skills or '-' }}</td>
+            <td>{{ a.education or '-' }}</td>
+            <td>{{ a.experience or '-' }}</td>
+            <td>
+                {% if a.resume_path %}
+                    <a href="{{ url_for('static', filename='uploads/' + a.resume_path) }}" target="_blank" style="color:#4CAF50;">View</a>
+                {% else %}
+                    -
+                {% endif %}
+            </td>
+            <td>{{ a.status }}</td>
+            <td>{{ a.applied_at }}</td>
+            <td>
+                <form method="POST" action="/update-status/{{ a.id }}" style="display:flex; gap:6px;">
+                    <select name="status" style="padding:6px; border-radius:4px;">
+                        <option value="pending" {% if a.status=='pending' %}selected{% endif %}>Pending</option>
+                        <option value="shortlisted" {% if a.status=='shortlisted' %}selected{% endif %}>Shortlisted</option>
+                        <option value="rejected" {% if a.status=='rejected' %}selected{% endif %}>Rejected</option>
+                    </select>
+                    <button type="submit" class="btn" style="padding:6px 12px;">Update</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

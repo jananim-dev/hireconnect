@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %}My Profile - HireConnect{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 500px; margin: 40px auto;">
+    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c3e50; margin-bottom: 5px;">{{ user.name }}</h2>
+        <p style="color:#888; margin-bottom:20px;">{{ user.email }} · {{ user.role }}</p>
+        <form method="POST" enctype="multipart/form-data">
+            <label style="font-size:13px; color:#555;">Skills</label>
+            <input type="text" name="skills" value="{{ user.skills or '' }}" placeholder="e.g. Python, Flask, MySQL" style="width:100%; padding:10px; margin:6px 0 14px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+
+            <label style="font-size:13px; color:#555;">Education</label>
+            <input type="text" name="education" value="{{ user.education or '' }}" placeholder="e.g. MCA - KCET" style="width:100%; padding:10px; margin:6px 0 14px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+
+            <label style="font-size:13px; color:#555;">Experience</label>
+            <input type="text" name="experience" value="{{ user.experience or '' }}" placeholder="e.g. Fresher / 1 year" style="width:100%; padding:10px; margin:6px 0 14px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+
+            <label style="font-size:13px; color:#555;">Resume (PDF)</label>
+            <input type="file" name="resume" accept=".pdf,.doc,.docx" style="width:100%; padding:8px; margin:6px 0 14px; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            {% if user.resume_path %}
+                <p style="font-size:13px; margin-bottom:14px;">Current: <a href="{{ url_for('static', filename='uploads/' + user.resume_path) }}" target="_blank" style="color:#4CAF50;">{{ user.resume_path }}</a></p>
+            {% endif %}
+
+            <button type="submit" class="btn" style="width:100%; padding:10px;">Save Profile</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

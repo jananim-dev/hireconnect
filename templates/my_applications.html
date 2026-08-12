@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}My Applications - HireConnect{% endblock %}
+{% block content %}
+<div class="container">
+    <h1 style="color:#2c3e50; margin-bottom:15px;">My Applications</h1>
+    <table>
+        <tr><th>Job Title</th><th>Company</th><th>Location</th><th>Status</th><th>Applied At</th></tr>
+        {% for app in applications %}
+        <tr>
+            <td>{{ app.title }}</td>
+            <td>{{ app.company_name }}</td>
+            <td>{{ app.location }}</td>
+            <td>
+                {% if app.status == 'shortlisted' %}
+                    <span style="background:#e8f5e9; color:#2e7d32; padding:4px 10px; border-radius:12px; font-size:12px; font-weight:600;">Shortlisted</span>
+                {% elif app.status == 'rejected' %}
+                    <span style="background:#ffebee; color:#c62828; padding:4px 10px; border-radius:12px; font-size:12px; font-weight:600;">Rejected</span>
+                {% else %}
+                    <span style="background:#fff3e0; color:#e65100; padding:4px 10px; border-radius:12px; font-size:12px; font-weight:600;">Pending</span>
+                {% endif %}
+            </td>
+            <td>{{ app.applied_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

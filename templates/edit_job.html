@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Edit Job - HireConnect{% endblock %}
+{% block content %}
+<div class="container" style="max-width: 500px; margin: 40px auto;">
+    <div style="background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <h2 style="color: #2c3e50; margin-bottom: 20px;">Edit Job</h2>
+        <form method="POST">
+            <input type="text" name="title" value="{{ job.title }}" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <textarea name="description" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">{{ job.description }}</textarea>
+            <input type="text" name="company_name" value="{{ job.company_name }}" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <input type="text" name="location" value="{{ job.location }}" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <input type="text" name="salary_range" value="{{ job.salary_range }}" required style="width:100%; padding:10px; margin:8px 0; border:1px solid #ccc; border-radius:4px; box-sizing:border-box;">
+            <button type="submit" class="btn" style="width:100%; padding:10px; margin-top:10px;">Update Job</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
