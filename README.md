@@ -35,4 +35,4 @@ A full-stack job portal web application built with Flask and MySQL, connecting j
 
 ## Setup
 
-1. Clone the repo
+1. Clone the repo 
