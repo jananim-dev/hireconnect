@@ -14,13 +14,15 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def get_db_connection():
     connection = pymysql.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="hireconnect",
+        host=os.environ.get('MYSQLHOST', 'localhost'),
+        user=os.environ.get('MYSQLUSER', 'root'),
+        password=os.environ.get('MYSQLPASSWORD', ''),
+        database=os.environ.get('MYSQLDATABASE', 'hireconnect'),
+        port=int(os.environ.get('MYSQLPORT', 3306)),
         cursorclass=pymysql.cursors.DictCursor
     )
     return connection
+    
 
 
 @app.route('/')
