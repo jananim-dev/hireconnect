@@ -5,24 +5,21 @@ from werkzeug.utils import secure_filename
 import os
 
 app = Flask(__name__)
-app.secret_key = "hireconnect_secret_key"
+app.secret_key = os.getenv("SECRET_KEY", "hireconnect_secret_key")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-def get_db_connection():
-    connection = pymysql.connect(
-        host=os.environ.get('MYSQLHOST', 'localhost'),
-        user=os.environ.get('MYSQLUSER', 'root'),
-        password=os.environ.get('MYSQLPASSWORD', ''),
-        database=os.environ.get('MYSQLDATABASE', 'hireconnect'),
-        port=int(os.environ.get('MYSQLPORT', 3306)),
-        cursorclass=pymysql.cursors.DictCursor
-    )
-    return connection
-    
+db_config = {
+    'host': os.getenv("MYSQLHOST"),
+    'user': os.getenv("MYSQLUSER"),
+    'password': os.getenv("MYSQLPASSWORD"),
+    'database': os.getenv("MYSQLDATABASE"),
+    'port': int(os.getenv("MYSQLPORT", 3306))
+}
+
 
 
 @app.route('/')
