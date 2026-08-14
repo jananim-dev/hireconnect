@@ -12,8 +12,6 @@ UPLOAD_FOLDER = os.path.join(BASE_DIR, 'static', 'uploads')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-def get_db_connection():
-    return pymysql.connect(**db_config, cursorclass=pymysql.cursors.DictCursor)
 
 db_config = {
     'host': os.getenv("MYSQLHOST"),
@@ -22,6 +20,8 @@ db_config = {
     'database': os.getenv("MYSQLDATABASE"),
     'port': int(os.getenv("MYSQLPORT", 3306))
 }
+def get_db_connection():
+    return pymysql.connect(**db_config, cursorclass=pymysql.cursors.DictCursor)
 
 
 
